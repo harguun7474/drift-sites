@@ -63,7 +63,7 @@ export default function Services() {
         'Safe, secure transport',
         'Complete setup at new location'
       ],
-      image: '/images/hero/hero-sunset.avif'
+      image: '/images/495964413_122126956886771855_902390982935800256_n.jpg'
     },
     {
       title: 'Lawn Fertilization',

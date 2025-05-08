@@ -30,20 +30,32 @@ export default function Services() {
 
   const services = [
     {
-      title: 'Van Hire',
-      description: 'Professional van hire services for all your transportation needs. Our well-maintained fleet ensures safe and reliable delivery of your items.',
+      title: 'Lawn Mowing',
+      description: 'Our professional lawn mowing services ensure your yard looks pristine year-round. We use state-of-the-art equipment and techniques to provide consistent, high-quality results with every visit.',
       features: [
-        'Various van sizes available',
-        'Flexible rental periods',
-        'Well-maintained vehicles',
-        'Competitive rates',
-        'Easy booking process'
+        'Weekly or bi-weekly maintenance schedules',
+        'Custom mowing patterns and heights',
+        'Precision edging and trimming',
+        'Debris cleanup and removal',
+        'Environmentally friendly practices'
       ],
-      image: 'https://images.unsplash.com/photo-1623966579343-dc29a78108f6?q=80&w=1974&auto=format&fit=crop'
+      image: '/images/services/lawn-service-1.jpg'
+    },
+    {
+      title: 'Landscaping',
+      description: "Transform your outdoor space with our comprehensive landscaping services. From design to implementation, we create beautiful, functional landscapes that enhance your property's value and your enjoyment.",
+      features: [
+        'Custom landscape design',
+        'Plant selection and installation',
+        'Hardscaping (patios, walkways)',
+        'Water features and irrigation',
+        'Seasonal color rotation'
+      ],
+      image: '/images/services/lawn-service-2.jpg'
     },
     {
       title: 'House Moving',
-      description: 'Complete house relocation services with expert care and precision. We handle everything from planning to execution, ensuring a smooth transition to your new location.',
+      description: 'Our experienced team specializes in complete house relocation services. Using state-of-the-art equipment and proven techniques, we ensure your structure is moved safely and efficiently to its new location.',
       features: [
         'Comprehensive structural assessment',
         'Permit acquisition assistance',
@@ -54,112 +66,16 @@ export default function Services() {
       image: '/images/495964413_122126956886771855_902390982935800256_n.jpg'
     },
     {
-      title: 'Office Moving',
-      description: 'Professional office relocation services designed to minimize business disruption. We handle your office equipment and furniture with care and efficiency.',
+      title: 'Lawn Fertilization',
+      description: "Keep your lawn healthy, green, and vibrant with our specialized fertilization services. We use premium, environmentally responsible products tailored to your lawn's specific needs and local conditions.",
       features: [
-        'Minimal business disruption',
-        'Equipment and furniture handling',
-        'Secure document transport',
-        'IT infrastructure relocation',
-        'Post-move setup assistance'
+        'Soil analysis and custom treatment plans',
+        'Seasonal fertilization schedules',
+        'Weed prevention and control',
+        'Disease and pest management',
+        'Organic options available'
       ],
-      image: 'https://images.unsplash.com/photo-1584178130626-3d79301d0a3a?q=80&w=1974&auto=format&fit=crop'
-    },
-    {
-      title: 'Furniture Moving',
-      description: 'Expert furniture moving services for both residential and commercial clients. We ensure your valuable furniture arrives safely at its destination.',
-      features: [
-        'Careful handling of all furniture types',
-        'Professional packing services',
-        'Assembly and disassembly',
-        'Insurance coverage',
-        'Flexible scheduling'
-      ],
-      image: 'https://images.unsplash.com/photo-1603004779967-501057f96207?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Lawn Mowing',
-      description: 'Professional lawn maintenance services to keep your property looking pristine year-round. Regular mowing and maintenance for a perfect lawn.',
-      features: [
-        'Regular maintenance schedules',
-        'Custom mowing patterns',
-        'Precision edging',
-        'Debris cleanup',
-        'Seasonal adjustments'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Clean Up',
-      description: 'Comprehensive property cleanup services for both residential and commercial properties. We handle all types of waste and debris removal.',
-      features: [
-        'General property cleanup',
-        'Construction debris removal',
-        'Garden waste disposal',
-        'Recycling services',
-        'Eco-friendly disposal'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Hedge Trimming',
-      description: 'Professional hedge maintenance services to keep your property boundaries neat and well-maintained. Regular trimming for healthy, attractive hedges.',
-      features: [
-        'Regular maintenance schedules',
-        'Precision trimming',
-        'Shape maintenance',
-        'Debris removal',
-        'Health monitoring'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Edging',
-      description: 'Precision lawn edging services to create clean, defined borders around your property. Professional edging for a polished landscape appearance.',
-      features: [
-        'Clean border creation',
-        'Regular maintenance',
-        'Precision cutting',
-        'Border definition',
-        'Professional finish'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Rubbish Removal',
-      description: 'Efficient rubbish removal services for all types of waste. We handle collection, sorting, and proper disposal of your unwanted items.',
-      features: [
-        'All waste types accepted',
-        'Proper disposal methods',
-        'Recycling services',
-        'Quick response time',
-        'Competitive rates'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Trimming',
-      description: 'Professional tree and shrub trimming services to maintain the health and appearance of your landscape. Regular maintenance for optimal growth.',
-      features: [
-        'Tree trimming',
-        'Shrub maintenance',
-        'Health-focused pruning',
-        'Seasonal trimming',
-        'Debris removal'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      title: 'Hedge Shaping',
-      description: 'Expert hedge shaping services to create beautiful, artistic designs in your landscape. Professional shaping for unique and attractive hedges.',
-      features: [
-        'Custom designs',
-        'Artistic shaping',
-        'Regular maintenance',
-        'Precision cutting',
-        'Creative solutions'
-      ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+      image: '/images/services/lawn-service-1.jpg'
     }
   ];
 
@@ -284,82 +200,8 @@ export default function Services() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-bold text-xl mb-2">Lawn Aeration</h3>
-              <p className="text-gray-600">Improve soil health and grass growth with our professional lawn aeration services.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-xl mb-2">Hedge Trimming</h3>
-              <p className="text-gray-600">Keep your hedges and shrubs looking neat and healthy with our precision trimming.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-xl mb-2">Seasonal Cleanup</h3>
-              <p className="text-gray-600">Spring and fall cleanup services to keep your property looking its best year-round.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-xl mb-2">Irrigation Systems</h3>
-              <p className="text-gray-600">Installation and maintenance of efficient watering systems for healthier lawns.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-xl mb-2">Tree Services</h3>
-              <p className="text-gray-600">Tree planting, trimming, and removal services by certified arborists.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-xl mb-2">Snow Removal</h3>
-              <p className="text-gray-600">Reliable winter snow removal services for driveways, walkways, and commercial properties.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="section-title inline-block">Our Services</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto mt-6">
-              We offer a comprehensive range of services to meet all your property and moving needs
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
-              <div className="text-green-600 mb-4">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
               <h3 className="font-bold text-xl mb-2">Van Hire</h3>
-              <p className="text-gray-600">Professional van hire services for all your transportation needs.</p>
+              <p className="text-gray-600">Professional van rental services for all your moving and transportation needs.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -379,7 +221,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Office Moving</h3>
-              <p className="text-gray-600">Professional office relocation services with minimal business disruption.</p>
+              <p className="text-gray-600">Professional office relocation services for businesses of all sizes.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -389,7 +231,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Furniture Moving</h3>
-              <p className="text-gray-600">Expert furniture moving services for both residential and commercial clients.</p>
+              <p className="text-gray-600">Careful and efficient furniture moving services for your home or office.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -399,7 +241,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Lawn Mowing</h3>
-              <p className="text-gray-600">Professional lawn maintenance services to keep your property looking pristine.</p>
+              <p className="text-gray-600">Professional lawn maintenance services for a perfectly manicured yard.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -409,7 +251,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Clean Up</h3>
-              <p className="text-gray-600">Comprehensive property cleanup services for residential and commercial properties.</p>
+              <p className="text-gray-600">Comprehensive property cleanup services for a pristine environment.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -419,7 +261,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Hedge Trimming</h3>
-              <p className="text-gray-600">Professional hedge maintenance services for neat and well-maintained boundaries.</p>
+              <p className="text-gray-600">Precision hedge trimming services for neat and healthy shrubs.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -429,7 +271,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Edging</h3>
-              <p className="text-gray-600">Precision lawn edging services for clean, defined borders around your property.</p>
+              <p className="text-gray-600">Professional lawn edging services for clean, defined borders.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -439,7 +281,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Rubbish Removal</h3>
-              <p className="text-gray-600">Efficient rubbish removal services for all types of waste and proper disposal.</p>
+              <p className="text-gray-600">Efficient and responsible rubbish removal services for your property.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -449,7 +291,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Trimming</h3>
-              <p className="text-gray-600">Professional tree and shrub trimming services for optimal growth and appearance.</p>
+              <p className="text-gray-600">Professional trimming services for trees, shrubs, and plants.</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
@@ -459,7 +301,7 @@ export default function Services() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Hedge Shaping</h3>
-              <p className="text-gray-600">Expert hedge shaping services for beautiful, artistic designs in your landscape.</p>
+              <p className="text-gray-600">Expert hedge shaping services for beautiful, well-maintained hedges.</p>
             </div>
           </div>
         </div>

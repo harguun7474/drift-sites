@@ -72,7 +72,7 @@ export default function Quote() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-[400px]">
         <div className="absolute inset-0">

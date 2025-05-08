@@ -21,10 +21,7 @@ export default function Services() {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => {
-      observer.observe(el);
-      el.classList.add('opacity-0'); // Initially hidden
-    });
+    animatedElements.forEach(el => observer.observe(el));
 
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));
@@ -83,7 +80,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-[400px]">
         <div className="absolute inset-0">
@@ -94,7 +91,7 @@ export default function Services() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-black/50" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">

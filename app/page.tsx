@@ -21,10 +21,7 @@ export default function Home() {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => {
-      observer.observe(el);
-      el.classList.add('opacity-0'); // Initially hidden
-    });
+    animatedElements.forEach(el => observer.observe(el));
 
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));

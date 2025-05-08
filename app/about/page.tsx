@@ -59,18 +59,18 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-[400px]">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop"
-            alt="About Specialty Lawns"
+            src="/images/hero/hero-main.jpg"
+            alt="About Us"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-black/50" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">

@@ -36,7 +36,7 @@ export default function Navbar() {
               href="/" 
               className="text-2xl font-bold transition-all duration-300 transform hover:scale-105"
             >
-              <span className="text-green-800">Specialty</span><span className="text-green-500">Lawns</span>
+              <span className={scrolled ? "text-green-800" : "text-green-400"}>Specialty</span><span className="text-green-500">Lawns</span>
             </Link>
           </div>
           

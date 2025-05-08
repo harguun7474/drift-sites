@@ -22,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/images/Specialty Lawns (2).png" type="image/png" />
+      </head>
       <body className={`${montserrat.className} antialiased`}>
         <Navbar />
         <main className="min-h-screen">

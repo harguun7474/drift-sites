@@ -271,6 +271,80 @@ export default function Services() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
+            <h2 className="section-title inline-block">Additional Services</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto mt-6">
+              We offer a variety of specialized services to meet all your property needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Lawn Aeration</h3>
+              <p className="text-gray-600">Improve soil health and grass growth with our professional lawn aeration services.</p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Hedge Trimming</h3>
+              <p className="text-gray-600">Keep your hedges and shrubs looking neat and healthy with our precision trimming.</p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Seasonal Cleanup</h3>
+              <p className="text-gray-600">Spring and fall cleanup services to keep your property looking its best year-round.</p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Irrigation Systems</h3>
+              <p className="text-gray-600">Installation and maintenance of efficient watering systems for healthier lawns.</p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Tree Services</h3>
+              <p className="text-gray-600">Tree planting, trimming, and removal services by certified arborists.</p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+              <div className="text-green-600 mb-4">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-xl mb-2">Snow Removal</h3>
+              <p className="text-gray-600">Reliable winter snow removal services for driveways, walkways, and commercial properties.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-on-scroll">
             <h2 className="section-title inline-block">Our Services</h2>
             <p className="text-gray-600 max-w-3xl mx-auto mt-6">
               We offer a comprehensive range of services to meet all your property and moving needs

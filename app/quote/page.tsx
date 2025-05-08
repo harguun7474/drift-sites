@@ -95,123 +95,215 @@ export default function Quote() {
 
       {/* Quote Form Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            {status.submitted ? (
-              <div className="text-center py-8">
-                <div className="text-green-500 mb-4">
-                  <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
-                <p className="text-gray-600 mb-8">We've received your request and will contact you shortly.</p>
-                <Link href="/" className="btn-primary">
-                  Return to Home
-                </Link>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    />
-                  </div>
-                </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Form Column */}
+            <div className="lg:w-2/3">
+              <div className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+                <h2 className="text-3xl font-bold mb-6 relative inline-block">
+                  Tell Us About Your Project
+                  <span className="absolute -bottom-2 left-0 w-2/3 h-1 bg-green-500 rounded"></span>
+                </h2>
+                <p className="text-gray-600 mb-8">
+                  Fill out the form below, and we'll get back to you within 24 hours with a 
+                  customized quote tailored to your specific needs.
+                </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    />
+                {status.submitted ? (
+                  <div className="text-center py-8">
+                    <div className="text-green-500 mb-4">
+                      <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+                    <p className="text-gray-600 mb-8">We've received your request and will contact you shortly.</p>
+                    <Link href="/" className="btn-primary">
+                      Return to Home
+                    </Link>
                   </div>
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-                      Service Interested In *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="lawn-mowing">Lawn Mowing</option>
-                      <option value="landscaping">Landscaping</option>
-                      <option value="house-moving">House Moving</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        />
+                      </div>
+                    </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Project Details *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="Please describe your project requirements..."
-                  />
-                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                          Phone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+                          Service Interested In *
+                        </label>
+                        <select
+                          id="service"
+                          name="service"
+                          required
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        >
+                          <option value="">Select a service</option>
+                          <option value="lawn-mowing">Lawn Mowing</option>
+                          <option value="landscaping">Landscaping</option>
+                          <option value="house-moving">House Moving</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
 
-                {status.info.error && (
-                  <div className="text-red-500 text-sm">
-                    {status.info.msg}
-                  </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                        Project Details *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        placeholder="Please describe your project requirements..."
+                      />
+                    </div>
+
+                    {status.info.error && (
+                      <div className="text-red-500 text-sm">
+                        {status.info.msg}
+                      </div>
+                    )}
+
+                    <div className="flex justify-center">
+                      <button
+                        type="submit"
+                        disabled={status.submitting}
+                        className="btn-primary w-full md:w-auto"
+                      >
+                        {status.submitting ? 'Submitting...' : 'Submit Request'}
+                      </button>
+                    </div>
+                  </form>
                 )}
+              </div>
+            </div>
 
-                <div className="flex justify-center">
-                  <button
-                    type="submit"
-                    disabled={status.submitting}
-                    className="btn-primary w-full md:w-auto"
-                  >
-                    {status.submitting ? 'Submitting...' : 'Submit Request'}
-                  </button>
+            {/* Contact Info Column */}
+            <div className="lg:w-1/3">
+              <div className="sticky top-24">
+                <div className="bg-green-800 text-white rounded-xl shadow-lg p-8 mb-8">
+                  <h3 className="text-xl font-bold mb-4">Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <svg className="h-6 w-6 text-green-400 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <div>
+                        <p className="font-medium text-green-200">Phone</p>
+                        <p className="text-white">(555) 123-4567</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <svg className="h-6 w-6 text-green-400 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <div>
+                        <p className="font-medium text-green-200">Email</p>
+                        <p className="text-white">info@specialtylawns.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <svg className="h-6 w-6 text-green-400 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <div>
+                        <p className="font-medium text-green-200">Address</p>
+                        <p className="text-white">123 Green Street,<br />Your City, State 12345</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-green-700">
+                    <h4 className="font-medium mb-2">Business Hours</h4>
+                    <ul className="space-y-1 text-green-100">
+                      <li className="flex justify-between"><span>Monday-Friday:</span> <span>8:00 AM - 6:00 PM</span></li>
+                      <li className="flex justify-between"><span>Saturday:</span> <span>9:00 AM - 3:00 PM</span></li>
+                      <li className="flex justify-between"><span>Sunday:</span> <span>Closed</span></li>
+                    </ul>
+                  </div>
                 </div>
-              </form>
-            )}
+
+                <div className="bg-gray-100 rounded-xl p-8">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800">Why Choose Us?</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-600 mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Free, no-obligation quotes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-600 mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">12+ years of industry experience</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-600 mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Fully licensed and insured</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-600 mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">Satisfaction guaranteed</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

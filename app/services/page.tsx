@@ -30,32 +30,20 @@ export default function Services() {
 
   const services = [
     {
-      title: 'Lawn Mowing',
-      description: 'Our professional lawn mowing services ensure your yard looks pristine year-round. We use state-of-the-art equipment and techniques to provide consistent, high-quality results with every visit.',
+      title: 'Van Hire',
+      description: 'Professional van hire services for all your transportation needs. Our well-maintained fleet ensures safe and reliable delivery of your items.',
       features: [
-        'Weekly or bi-weekly maintenance schedules',
-        'Custom mowing patterns and heights',
-        'Precision edging and trimming',
-        'Debris cleanup and removal',
-        'Environmentally friendly practices'
+        'Various van sizes available',
+        'Flexible rental periods',
+        'Well-maintained vehicles',
+        'Competitive rates',
+        'Easy booking process'
       ],
-      image: '/images/services/lawn-service-1.jpg'
-    },
-    {
-      title: 'Landscaping',
-      description: "Transform your outdoor space with our comprehensive landscaping services. From design to implementation, we create beautiful, functional landscapes that enhance your property's value and your enjoyment.",
-      features: [
-        'Custom landscape design',
-        'Plant selection and installation',
-        'Hardscaping (patios, walkways)',
-        'Water features and irrigation',
-        'Seasonal color rotation'
-      ],
-      image: '/images/services/lawn-service-2.jpg'
+      image: 'https://images.unsplash.com/photo-1623966579343-dc29a78108f6?q=80&w=1974&auto=format&fit=crop'
     },
     {
       title: 'House Moving',
-      description: 'Our experienced team specializes in complete house relocation services. Using state-of-the-art equipment and proven techniques, we ensure your structure is moved safely and efficiently to its new location.',
+      description: 'Complete house relocation services with expert care and precision. We handle everything from planning to execution, ensuring a smooth transition to your new location.',
       features: [
         'Comprehensive structural assessment',
         'Permit acquisition assistance',
@@ -66,16 +54,112 @@ export default function Services() {
       image: '/images/495964413_122126956886771855_902390982935800256_n.jpg'
     },
     {
-      title: 'Lawn Fertilization',
-      description: "Keep your lawn healthy, green, and vibrant with our specialized fertilization services. We use premium, environmentally responsible products tailored to your lawn's specific needs and local conditions.",
+      title: 'Office Moving',
+      description: 'Professional office relocation services designed to minimize business disruption. We handle your office equipment and furniture with care and efficiency.',
       features: [
-        'Soil analysis and custom treatment plans',
-        'Seasonal fertilization schedules',
-        'Weed prevention and control',
-        'Disease and pest management',
-        'Organic options available'
+        'Minimal business disruption',
+        'Equipment and furniture handling',
+        'Secure document transport',
+        'IT infrastructure relocation',
+        'Post-move setup assistance'
       ],
-      image: '/images/services/lawn-service-1.jpg'
+      image: 'https://images.unsplash.com/photo-1584178130626-3d79301d0a3a?q=80&w=1974&auto=format&fit=crop'
+    },
+    {
+      title: 'Furniture Moving',
+      description: 'Expert furniture moving services for both residential and commercial clients. We ensure your valuable furniture arrives safely at its destination.',
+      features: [
+        'Careful handling of all furniture types',
+        'Professional packing services',
+        'Assembly and disassembly',
+        'Insurance coverage',
+        'Flexible scheduling'
+      ],
+      image: 'https://images.unsplash.com/photo-1603004779967-501057f96207?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Lawn Mowing',
+      description: 'Professional lawn maintenance services to keep your property looking pristine year-round. Regular mowing and maintenance for a perfect lawn.',
+      features: [
+        'Regular maintenance schedules',
+        'Custom mowing patterns',
+        'Precision edging',
+        'Debris cleanup',
+        'Seasonal adjustments'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Clean Up',
+      description: 'Comprehensive property cleanup services for both residential and commercial properties. We handle all types of waste and debris removal.',
+      features: [
+        'General property cleanup',
+        'Construction debris removal',
+        'Garden waste disposal',
+        'Recycling services',
+        'Eco-friendly disposal'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Hedge Trimming',
+      description: 'Professional hedge maintenance services to keep your property boundaries neat and well-maintained. Regular trimming for healthy, attractive hedges.',
+      features: [
+        'Regular maintenance schedules',
+        'Precision trimming',
+        'Shape maintenance',
+        'Debris removal',
+        'Health monitoring'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Edging',
+      description: 'Precision lawn edging services to create clean, defined borders around your property. Professional edging for a polished landscape appearance.',
+      features: [
+        'Clean border creation',
+        'Regular maintenance',
+        'Precision cutting',
+        'Border definition',
+        'Professional finish'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Rubbish Removal',
+      description: 'Efficient rubbish removal services for all types of waste. We handle collection, sorting, and proper disposal of your unwanted items.',
+      features: [
+        'All waste types accepted',
+        'Proper disposal methods',
+        'Recycling services',
+        'Quick response time',
+        'Competitive rates'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Trimming',
+      description: 'Professional tree and shrub trimming services to maintain the health and appearance of your landscape. Regular maintenance for optimal growth.',
+      features: [
+        'Tree trimming',
+        'Shrub maintenance',
+        'Health-focused pruning',
+        'Seasonal trimming',
+        'Debris removal'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+      title: 'Hedge Shaping',
+      description: 'Expert hedge shaping services to create beautiful, artistic designs in your landscape. Professional shaping for unique and attractive hedges.',
+      features: [
+        'Custom designs',
+        'Artistic shaping',
+        'Regular maintenance',
+        'Precision cutting',
+        'Creative solutions'
+      ],
+      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
     }
   ];
 

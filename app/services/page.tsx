@@ -42,7 +42,7 @@ export default function Services() {
         'Debris cleanup and removal',
         'Environmentally friendly practices'
       ],
-      image: 'https://images.unsplash.com/photo-1623966579343-dc29a78108f6?q=80&w=1974&auto=format&fit=crop'
+      image: '/images/services/lawn-service-1.jpg'
     },
     {
       title: 'Landscaping',
@@ -54,7 +54,7 @@ export default function Services() {
         'Water features and irrigation',
         'Seasonal color rotation'
       ],
-      image: 'https://images.unsplash.com/photo-1584178130626-3d79301d0a3a?q=80&w=1974&auto=format&fit=crop'
+      image: '/images/services/lawn-service-2.jpg'
     },
     {
       title: 'House Moving',
@@ -66,7 +66,7 @@ export default function Services() {
         'Safe, secure transport',
         'Complete setup at new location'
       ],
-      image: 'https://images.unsplash.com/photo-1603004779967-501057f96207?q=80&w=2070&auto=format&fit=crop'
+      image: '/images/hero/hero-sunset.avif'
     },
     {
       title: 'Lawn Fertilization',
@@ -78,7 +78,7 @@ export default function Services() {
         'Disease and pest management',
         'Organic options available'
       ],
-      image: 'https://images.unsplash.com/photo-1600698476351-86bab6facd8c?q=80&w=2070&auto=format&fit=crop'
+      image: '/images/services/lawn-service-1.jpg'
     }
   ];
 
@@ -88,7 +88,7 @@ export default function Services() {
       <section className="relative h-[400px]">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=2070&auto=format&fit=crop"
+            src="/images/hero/hero-main.jpg"
             alt="Our Services"
             fill
             className="object-cover"

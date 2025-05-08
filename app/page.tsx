@@ -37,7 +37,7 @@ export default function Home() {
       <section className="relative h-[90vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1589923188651-268a9765e432?q=80&w=2070&auto=format&fit=crop"
+            src="/images/hero/hero-main.jpg"
             alt="Beautiful lawn"
             fill
             className="object-cover"
@@ -95,7 +95,7 @@ export default function Home() {
             <div className="card group animate-on-scroll">
               <div className="relative h-[300px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1623966579343-dc29a78108f6?q=80&w=1974&auto=format&fit=crop"
+                  src="/images/services/lawn-service-1.jpg"
                   alt="Lawn mowing service"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -127,7 +127,7 @@ export default function Home() {
             <div className="card group animate-on-scroll">
               <div className="relative h-[300px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1584178130626-3d79301d0a3a?q=80&w=1974&auto=format&fit=crop"
+                  src="/images/services/lawn-service-2.jpg"
                   alt="Landscaping service"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -159,7 +159,7 @@ export default function Home() {
             <div className="card group animate-on-scroll">
               <div className="relative h-[300px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1603004779967-501057f96207?q=80&w=2070&auto=format&fit=crop"
+                  src="/images/hero/hero-sunset.avif"
                   alt="House moving service"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

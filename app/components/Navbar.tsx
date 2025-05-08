@@ -1,10 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,8 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isSpecialtyGreen = pathname !== '/';
 
   return (
     <nav 
@@ -36,7 +40,7 @@ export default function Navbar() {
                 scrolled ? 'text-green-800' : 'text-white'
               }`}
             >
-              Specialty<span className="text-green-500">Lawns</span>
+              <span className={isSpecialtyGreen ? 'text-green-500' : ''}>Specialty</span><span className="text-green-500">Lawns</span>
             </Link>
           </div>
           

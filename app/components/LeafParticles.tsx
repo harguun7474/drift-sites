@@ -34,15 +34,15 @@ export default function LeafParticles() {
     // Create initial particles
     const createParticles = () => {
       const newParticles: Particle[] = [];
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 20; i++) {
         newParticles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 15 + 5,
-          speedX: Math.random() * 0.5 - 0.25,
-          speedY: Math.random() * 0.5 - 0.25,
+          size: Math.random() * 20 + 15,
+          speedX: Math.random() * 0.3 - 0.15,
+          speedY: Math.random() * 0.2 + 0.1,
           rotation: Math.random() * 360,
-          rotationSpeed: Math.random() * 2 - 1
+          rotationSpeed: Math.random() * 0.5 - 0.25
         });
       }
       particles.current = newParticles;
@@ -54,30 +54,45 @@ export default function LeafParticles() {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate((rotation * Math.PI) / 180);
+      
+      // Draw leaf body
       ctx.beginPath();
-      ctx.moveTo(0, -size);
+      ctx.moveTo(0, -size * 0.8); // Start at top
+      
+      // Left side of leaf
       ctx.bezierCurveTo(
-        size / 2, -size,
-        size, -size / 2,
-        size, 0
+        -size * 0.5, -size * 0.8, // Control point 1
+        -size * 0.8, -size * 0.4, // Control point 2
+        -size * 0.4, 0 // End point
       );
+      
+      // Bottom curve
       ctx.bezierCurveTo(
-        size, size / 2,
-        size / 2, size,
-        0, size
+        -size * 0.2, size * 0.4, // Control point 1
+        0, size * 0.6, // Control point 2
+        size * 0.4, 0 // End point
       );
+      
+      // Right side of leaf
       ctx.bezierCurveTo(
-        -size / 2, size,
-        -size, size / 2,
-        -size, 0
+        size * 0.8, -size * 0.4, // Control point 1
+        size * 0.5, -size * 0.8, // Control point 2
+        0, -size * 0.8 // End point
       );
-      ctx.bezierCurveTo(
-        -size, -size / 2,
-        -size / 2, -size,
-        0, -size
-      );
+      
+      // Add leaf stem
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, size * 0.8);
+      
+      // Set leaf color and style
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      
+      // Fill leaf with semi-transparent color
       ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
       ctx.fill();
+      
       ctx.restore();
     };
 

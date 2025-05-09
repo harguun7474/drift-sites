@@ -117,21 +117,6 @@ export default function About() {
                 Today, we're proud to be one of the most trusted names in lawn care and house moving services,
                 serving hundreds of satisfied customers across the region.
               </p>
-              
-              <div className="mt-8 flex space-x-6">
-                <div>
-                  <span className="block text-4xl font-bold text-green-600">12+</span>
-                  <span className="text-gray-500">Years Experience</span>
-                </div>
-                <div>
-                  <span className="block text-4xl font-bold text-green-600">1500+</span>
-                  <span className="text-gray-500">Happy Clients</span>
-                </div>
-                <div>
-                  <span className="block text-4xl font-bold text-green-600">24+</span>
-                  <span className="text-gray-500">Team Members</span>
-                </div>
-              </div>
             </div>
             <div className="relative h-[500px] rounded-xl overflow-hidden shadow-xl animate-on-scroll order-1 lg:order-2">
               <Image

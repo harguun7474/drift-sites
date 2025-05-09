@@ -82,9 +82,9 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="section-title inline-block">Our Premium Services</h2>
+            <h2 className="section-title inline-block">Our Services</h2>
             <p className="text-gray-600 max-w-3xl mx-auto mt-6">
-              We offer comprehensive lawn care and house moving services tailored to your specific needs
+              Comprehensive solutions for all your property needs
             </p>
           </div>
           
@@ -183,30 +183,6 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-green-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="animate-on-scroll">
-              <div className="text-4xl md:text-5xl font-bold mb-2">12+</div>
-              <div className="text-green-200">Years Experience</div>
-            </div>
-            <div className="animate-on-scroll">
-              <div className="text-4xl md:text-5xl font-bold mb-2">1500+</div>
-              <div className="text-green-200">Satisfied Clients</div>
-            </div>
-            <div className="animate-on-scroll">
-              <div className="text-4xl md:text-5xl font-bold mb-2">100%</div>
-              <div className="text-green-200">Quality Guarantee</div>
-            </div>
-            <div className="animate-on-scroll">
-              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
-              <div className="text-green-200">Customer Support</div>
             </div>
           </div>
         </div>

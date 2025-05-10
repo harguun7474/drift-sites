@@ -41,10 +41,10 @@ export default function LeafParticles() {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 25 + 20, // Longer grass blades
-          speedX: Math.random() * 0.2 - 0.1, // Gentle horizontal movement
-          speedY: Math.random() * 0.1 + 0.05, // Slight upward drift
+          speedX: Math.random() * 0.5 - 0.25, // Faster horizontal movement
+          speedY: Math.random() * 0.3 + 0.15, // Faster upward drift
           rotation: Math.random() * 20 - 10, // Initial bend angle
-          rotationSpeed: Math.random() * 0.1 - 0.05, // Gentle swaying
+          rotationSpeed: Math.random() * 0.25 - 0.125, // Faster swaying
           bladeWidth: Math.random() * 1.5 + 0.5, // Width of grass blade
           bend: Math.random() * 0.3 + 0.1 // How much the blade curves
         });

@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import AnimatedLayout from './components/AnimatedLayout'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -26,11 +25,9 @@ export default function RootLayout({
         <link rel="icon" href="/images/Specialty Lawns (2).png" type="image/png" />
       </head>
       <body className={`${montserrat.className} antialiased`}>
-        <Navbar />
-        <main className="min-h-screen">
+        <AnimatedLayout>
           {children}
-        </main>
-        <Footer />
+        </AnimatedLayout>
       </body>
     </html>
   )

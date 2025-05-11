@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <path fill="#006400" d="M300 50 L550 200 L550 400 L300 550 L50 400 L50 200 Z"/>
+  <path fill="#7CFC00" d="M300 150 L120 300 L120 350 L300 450 L480 350 L480 300 Z"/>
+  <g>
+    <path fill="#7CFC00" d="M150 280 L170 220 L190 270 L210 200 L230 280 L250 210 L270 280 L290 190 L310 280 L330 210 L350 280 L370 200 L390 270 L410 220 L430 280"/>
+  </g>
+  <rect fill="#006400" x="120" y="350" width="360" height="100"/>
+  <text fill="white" font-family="Arial" font-weight="bold" font-size="60" x="150" y="420">SPECIALTY LAWNS</text>
+  <rect fill="#7CFC00" x="270" y="450" width="60" height="30"/>
+  <text fill="#006400" font-family="Arial" font-size="14" x="220" y="470">LAWN MOWING</text>
+</svg>

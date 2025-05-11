@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -34,9 +35,16 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link 
               href="/" 
-              className="text-2xl font-bold transition-all duration-300 transform hover:scale-105"
+              className="transition-all duration-300 transform hover:scale-105 flex items-center"
             >
-              <span className={scrolled ? "text-green-800" : "text-green-400"}>Specialty</span><span className="text-green-500">Lawns</span>
+              <Image 
+                src="/images/Specialty Lawns logo.png" 
+                alt="Specialty Lawns Logo" 
+                width={150} 
+                height={60} 
+                className="h-12 w-auto" 
+                priority
+              />
             </Link>
           </div>
           

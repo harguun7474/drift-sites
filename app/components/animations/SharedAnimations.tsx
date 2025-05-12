@@ -1,25 +1,21 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // Fade up animation for sections
-export const FadeUpDiv = ({ children, delay = 0, className = '' }) => {
-  const prefersReducedMotion = useReducedMotion();
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{
-        duration: prefersReducedMotion ? 0.3 : 0.6,
-        delay: prefersReducedMotion ? 0 : delay,
-        ease: [0.21, 0.45, 0.27, 0.99]
-      }}
-      className={`${className} will-change-transform`}
-    >
-      {children}
-    </motion.div>
-  );
-};
+export const FadeUpDiv = ({ children, delay = 0, className = '' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{
+      duration: 0.6,
+      delay,
+      ease: [0.21, 0.45, 0.27, 0.99]
+    }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
 
 // Stagger container for child elements
 export const staggerContainer = {
@@ -35,18 +31,21 @@ export const staggerContainer = {
 
 // Fade in animation for child elements
 export const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { 
+    opacity: 0,
+    y: 20
+  },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: [0.21, 0.45, 0.27, 0.99]
     }
   }
 };
 
-// Scale on hover animation
+// Scale animation for hover effects
 export const scaleOnHover = {
   initial: { scale: 1 },
   hover: { 
@@ -60,53 +59,49 @@ export const scaleOnHover = {
 
 // Slide in from side animation
 export const slideInFromSide = (direction = "left", delay = 0) => ({
-  hidden: { 
-    x: direction === "left" ? -100 : 100,
+  hidden: {
+    x: direction === "left" ? -50 : 50,
     opacity: 0 
   },
   show: {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       delay,
       ease: [0.21, 0.45, 0.27, 0.99]
     }
   }
 });
 
+// Page transition wrapper
+export const PageWrapper = ({ children, className = '' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{
+      duration: 0.5,
+      ease: [0.21, 0.45, 0.27, 0.99]
+    }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
+
 // Floating animation
 export const floatingAnimation = {
   initial: { y: 0 },
   animate: {
-    y: [0, -10, 0],
+    y: [-8, 8],
     transition: {
       duration: 2,
       repeat: Infinity,
-      repeatType: "reverse" as const,
+      repeatType: "reverse",
       ease: "easeInOut"
     }
   }
-};
-
-// Page transition wrapper
-export const PageWrapper = ({ children, className = '' }) => {
-  const prefersReducedMotion = useReducedMotion();
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{
-        duration: prefersReducedMotion ? 0.2 : 0.4,
-        ease: [0.21, 0.45, 0.27, 0.99]
-      }}
-      className={`${className} will-change-transform`}
-    >
-      {children}
-    </motion.div>
-  );
 };
 
 // Text reveal animation
@@ -120,6 +115,34 @@ export const textReveal = {
     opacity: 1,
     transition: {
       duration: 0.6,
+      ease: [0.21, 0.45, 0.27, 0.99]
+    }
+  }
+};
+
+// Card hover animation
+export const cardHoverAnimation = {
+  initial: { scale: 1 },
+  hover: {
+    scale: 1.02,
+    transition: {
+      duration: 0.3,
+      ease: [0.21, 0.45, 0.27, 0.99]
+    }
+  }
+};
+
+// Mobile menu animation
+export const mobileMenuAnimation = {
+  hidden: { 
+    height: 0,
+    opacity: 0
+  },
+  show: {
+    height: "auto",
+    opacity: 1,
+    transition: {
+      duration: 0.3,
       ease: [0.21, 0.45, 0.27, 0.99]
     }
   }

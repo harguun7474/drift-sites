@@ -123,7 +123,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              About Our Company
+              Excellence in Every Project
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-200"
@@ -131,7 +131,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              Building a greener future with excellence and integrity
+              Delivering exceptional results with precision and care
             </motion.p>
           </div>
         </motion.div>
@@ -154,7 +154,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Our Mission
+              Our Commitment
             </motion.h2>
             <motion.p 
               className="text-gray-600 text-lg mt-8"
@@ -163,15 +163,15 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              At Specialty Lawns, our mission is to transform outdoor spaces and provide exceptional moving services 
-              that exceed client expectations. We blend artistry with technical expertise to create beautiful, 
-              functional environments while ensuring seamless relocations that respect both structures and landscapes.
+              At Specialty Lawns, we are dedicated to delivering exceptional lawn care and moving services that exceed expectations. 
+              Our team of skilled professionals combines technical expertise with artistic vision to create beautiful, 
+              functional spaces while ensuring every project is completed with the highest standards of quality and safety.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Expertise */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -189,7 +189,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                Our Story
+                Professional Excellence
                 <motion.span 
                   className="absolute -bottom-2 left-0 w-1/3 h-1 bg-green-500 rounded"
                   initial={{ width: 0 }}
@@ -205,18 +205,17 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <p className="text-gray-600 mb-4 text-lg">
-                  Founded in 2010, Specialty Lawns began with a simple mission: to provide exceptional lawn care services
-                  that transform outdoor spaces into beautiful, functional areas. What started as a small family business
-                  has grown into a full-service company offering comprehensive lawn care and house moving solutions.
+                  Our team brings together years of specialized experience in lawn care and property moving. 
+                  We combine traditional techniques with modern innovations to deliver outstanding results that 
+                  stand the test of time.
                 </p>
                 <p className="text-gray-600 mb-4 text-lg">
-                  Over the years, we've expanded our services to include house moving, allowing us to serve our community
-                  in new and meaningful ways. Our commitment to quality, safety, and customer satisfaction has remained
-                  constant throughout our growth.
+                  From precise lawn maintenance to complex house moving operations, we handle every project 
+                  with meticulous attention to detail and a commitment to excellence that sets us apart.
                 </p>
                 <p className="text-gray-600 text-lg">
-                  Today, we're proud to be one of the most trusted names in lawn care and house moving services,
-                  serving hundreds of satisfied customers across the region.
+                  We take pride in our work and it shows in every project we complete. Our dedication to quality 
+                  and customer satisfaction has made us the preferred choice for discerning property owners.
                 </p>
               </motion.div>
             </motion.div>
@@ -230,7 +229,7 @@ export default function About() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                alt="Company History"
+                alt="Professional Excellence"
                 fill
                 className="object-cover"
               />

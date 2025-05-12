@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,9 +117,33 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-md">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <motion.div 
+        className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-md"
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ 
+          height: isMenuOpen ? 'auto' : 0,
+          opacity: isMenuOpen ? 1 : 0
+        }}
+        transition={{ 
+          duration: 0.3,
+          ease: [0.21, 0.45, 0.27, 0.99]
+        }}
+      >
+        <motion.div 
+          className="px-2 pt-2 pb-3 space-y-1 sm:px-3"
+          initial={{ y: -20 }}
+          animate={{ y: isMenuOpen ? 0 : -20 }}
+          transition={{ 
+            duration: 0.3,
+            ease: [0.21, 0.45, 0.27, 0.99],
+            delay: 0.1
+          }}
+        >
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: isMenuOpen ? 0 : -20, opacity: isMenuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+          >
             <Link 
               href="/" 
               className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
@@ -126,6 +151,12 @@ export default function Navbar() {
             >
               Home
             </Link>
+          </motion.div>
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: isMenuOpen ? 0 : -20, opacity: isMenuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+          >
             <Link 
               href="/services" 
               className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
@@ -133,6 +164,12 @@ export default function Navbar() {
             >
               Services
             </Link>
+          </motion.div>
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: isMenuOpen ? 0 : -20, opacity: isMenuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+          >
             <Link 
               href="/about" 
               className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
@@ -140,6 +177,12 @@ export default function Navbar() {
             >
               About
             </Link>
+          </motion.div>
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: isMenuOpen ? 0 : -20, opacity: isMenuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+          >
             <Link 
               href="/quote" 
               className="block bg-green-600 hover:bg-green-500 text-white px-3 py-2 rounded-md"
@@ -147,9 +190,9 @@ export default function Navbar() {
             >
               Get a Quote
             </Link>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </nav>
   );
 } 

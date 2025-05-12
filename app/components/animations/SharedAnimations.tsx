@@ -98,7 +98,7 @@ export const floatingAnimation = {
     transition: {
       duration: 2,
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: "mirror" as const,
       ease: "easeInOut"
     }
   }

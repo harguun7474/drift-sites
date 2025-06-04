@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import LeafParticles from '../components/LeafParticles';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -47,24 +46,27 @@ const cardVariants = {
 export default function Services() {
   const services = [
     {
-      title: 'Lawn Mowing',
-      description: 'Our professional lawn mowing services ensure your yard looks pristine year-round. We use state-of-the-art equipment and techniques to provide consistent, high-quality results with every visit.',
-      image: '/images/services/lawn-service-1.jpg'
+      title: 'Web Development',
+      description: 'We create custom, responsive websites using the latest technologies and best practices. From simple landing pages to complex web applications, we deliver solutions that drive results.',
+      image: '/images/simple web developme.png',
+      icon: '💻'
     },
     {
-      title: 'Landscaping',
-      description: "Transform your outdoor space with our comprehensive landscaping services. From design to implementation, we create beautiful, functional landscapes that enhance your property's value and your enjoyment.",
-      image: '/images/services/lawn-service-2.jpg'
+      title: 'UI/UX Design',
+      description: "Transform your digital presence with our expert UI/UX design services. We create beautiful, intuitive interfaces that engage users and drive conversions while maintaining brand consistency.",
+      image: '/images/uiux design.jpg',
+      icon: '🎨'
     },
     {
-      title: 'House Moving',
-      description: 'Our experienced team specializes in complete house relocation services. Using state-of-the-art equipment and proven techniques, we ensure your structure is moved safely and efficiently to its new location.',
-      image: '/images/495964413_122126956886771855_902390982935800256_n.jpg'
+      title: 'E-commerce Solutions',
+      description: 'Build your online store with our comprehensive e-commerce solutions. We implement secure payment systems, inventory management, and user-friendly interfaces to help your business grow.',
+      image: '/images/ecommerce-futuristic.jpg',
+      icon: '🛍️'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <section className="relative h-[400px]">
         <motion.div 
@@ -73,15 +75,12 @@ export default function Services() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <Image
-            src="/images/hero/hero-main.jpg"
-            alt="Our Services"
-            fill
-            className="object-cover"
-            priority
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/70 to-black/50" />
+          <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20" />
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+            style={{ backgroundImage: "url('/images/codeing.png')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-black/50" />
-          <LeafParticles />
         </motion.div>
         <motion.div 
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center"
@@ -96,22 +95,22 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Our Professional Services
+              Our Web Development Services
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-200"
+              className="text-xl text-gray-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              Comprehensive solutions tailored to your property's unique needs
+              Comprehensive digital solutions tailored to your business needs
             </motion.p>
           </div>
         </motion.div>
       </section>
 
       {/* Services Introduction */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center max-w-3xl mx-auto"
@@ -120,20 +119,20 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title inline-block mb-6">Excellence in Every Detail</h2>
-            <p className="text-gray-600 text-lg mb-4">
-              At Specialty Lawns, we pride ourselves on delivering exceptional services that transform your property. 
-              With years of experience and a commitment to quality, our team ensures outstanding results every time.
+            <h2 className="section-title inline-block mb-6">Excellence in Digital Solutions</h2>
+            <p className="text-gray-300 text-lg mb-4">
+              At Drift Sites, we combine technical expertise with creative vision to deliver exceptional web solutions. 
+              Our team stays ahead of the curve with the latest technologies and best practices.
             </p>
-            <p className="text-gray-600 text-lg">
-              Browse our core services below, or contact us to discuss your specific project needs.
+            <p className="text-gray-300 text-lg">
+              Explore our core services below, or contact us to discuss your specific project needs.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services List */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="space-y-24"
@@ -151,7 +150,7 @@ export default function Services() {
                 variants={fadeInUp}
               >
                 <motion.div 
-                  className="w-full lg:w-1/2 relative h-[400px] rounded-xl overflow-hidden shadow-xl"
+                  className="w-full lg:w-1/2 relative h-[400px] rounded-xl overflow-hidden shadow-xl border border-purple-500/20"
                   variants={imageVariants}
                   whileHover="hover"
                 >
@@ -161,22 +160,23 @@ export default function Services() {
                     fill
                     className="object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-black/50" />
                 </motion.div>
                 <motion.div 
                   className="w-full lg:w-1/2 p-8 lg:p-12"
                   variants={fadeInUp}
                 >
-                  <h2 className="text-3xl font-bold mb-6 relative">
+                  <h2 className="text-3xl font-bold mb-6 relative text-white">
                     {service.title}
                     <motion.span 
-                      className="absolute -bottom-2 left-0 w-16 h-1 bg-green-500 rounded"
+                      className="absolute -bottom-2 left-0 w-16 h-1 bg-purple-500 rounded"
                       initial={{ width: 0 }}
                       whileInView={{ width: 64 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.2 }}
                     />
                   </h2>
-                  <p className="text-gray-600 mb-8 text-lg">{service.description}</p>
+                  <p className="text-gray-300 mb-8 text-lg">{service.description}</p>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -206,7 +206,7 @@ export default function Services() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -216,8 +216,8 @@ export default function Services() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="section-title inline-block">Additional Services</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto mt-6">
-              We offer a variety of specialized services to meet all your property needs
+            <p className="text-gray-300 max-w-3xl mx-auto mt-6">
+              We offer a variety of specialized services to enhance your digital presence
             </p>
           </motion.div>
           
@@ -229,73 +229,34 @@ export default function Services() {
             viewport={{ once: true }}
           >
             {[
-              { title: 'Van Hire', description: 'Professional van rental services for all your moving and transportation needs.' },
-              { title: 'Office Moving', description: 'Professional office relocation services for businesses of all sizes.' },
-              { title: 'Furniture Moving', description: 'Careful and efficient furniture moving services for your home or office.' },
-              { title: 'Clean Up', description: 'Comprehensive property cleanup services for a pristine environment.' },
-              { title: 'Hedge Trimming', description: 'Precision hedge trimming services for neat and healthy shrubs.' },
-              { title: 'Edging', description: 'Professional lawn edging services for clean, defined borders.' },
-              { title: 'Rubbish Removal', description: 'Efficient and responsible rubbish removal services for your property.' },
-              { title: 'Trimming', description: 'Professional trimming services for trees, shrubs, and plants.' },
-              { title: 'Hedge Shaping', description: 'Expert hedge shaping services for beautiful, well-maintained hedges.' }
+              { title: 'SEO Optimization', description: 'Improve your website visibility and ranking in search engines.' },
+              { title: 'Performance Optimization', description: 'Enhance your website speed and user experience.' },
+              { title: 'Content Management', description: 'Easy-to-use CMS solutions for managing your website content.' },
+              { title: 'Mobile Development', description: 'Native and cross-platform mobile applications.' },
+              { title: 'API Development', description: 'Custom API solutions for seamless integration.' },
+              { title: 'Cloud Solutions', description: 'Scalable cloud infrastructure and deployment services.' },
+              { title: 'Maintenance', description: 'Regular updates and maintenance to keep your site running smoothly.' },
+              { title: 'Security', description: 'Comprehensive security solutions to protect your digital assets.' },
+              { title: 'Analytics', description: 'Advanced analytics and reporting for data-driven decisions.' }
             ].map((service, index) => (
               <motion.div
                 key={service.title}
-                className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300"
+                className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300 border border-gray-700"
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <motion.div 
-                  className="text-green-600 mb-4"
+                  className="text-purple-400 mb-4"
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
                 >
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </motion.div>
-                <h3 className="font-bold text-xl mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
+                <p className="text-gray-400">{service.description}</p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-green-800 to-green-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Contact us today to schedule a free consultation and customized quote for your property
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="/quote"
-                className="bg-white text-green-800 hover:bg-green-100 px-8 py-4 rounded-md text-lg font-semibold inline-flex items-center transition-all duration-300"
-              >
-                <span>Request a Free Quote</span>
-                <motion.svg 
-                  className="w-5 h-5 ml-2"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </motion.svg>
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>

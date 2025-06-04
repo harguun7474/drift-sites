@@ -2,9 +2,9 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import LeafParticles from './components/LeafParticles';
 import { motion, useScroll, useTransform, useSpring, MotionValue, useInView } from 'framer-motion';
 import { fadeInUp, staggerContainer, scaleOnHover, textReveal, floatingAnimation } from './components/animations/SharedAnimations';
+import { FuturisticBackground } from './components/FuturisticBackground';
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -34,6 +34,7 @@ export default function Home() {
       <div className="min-h-screen" ref={containerRef}>
         {/* Hero Section */}
         <section className="relative h-[100vh] flex items-center overflow-hidden">
+          <FuturisticBackground />
           <motion.div 
             className="absolute inset-0"
             style={{ y: backgroundY, scale: imageScale }}
@@ -41,47 +42,36 @@ export default function Home() {
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: [0.21, 0.45, 0.27, 0.99] }}
           >
-            <Image
-              src="/images/hero/hero-main.jpg"
-              alt="Beautiful lawn"
-              fill
-              className="object-cover"
-              priority
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/70" />
+            <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20" />
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+              style={{ backgroundImage: "url('/images/codeing.png')" }}
             />
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30"
-              style={{ opacity }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
-              transition={{ duration: 1 }}
-            />
-            <LeafParticles />
           </motion.div>
 
           <motion.div 
-            className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
+            className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center"
             style={{ y: textY }}
             variants={staggerContainer}
             initial="hidden"
             animate="show"
           >
-            <div className="text-white max-w-3xl">
+            <div className="text-white max-w-3xl lg:w-1/2">
               <motion.div className="overflow-hidden">
                 <motion.h1 
                   variants={textReveal}
                   className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
                 >
-                  Transform Your <span className="text-green-400">Outdoor Space</span>
+                  Elevate Your <span className="text-purple-400">Digital Presence</span>
                 </motion.h1>
               </motion.div>
-
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl md:text-2xl mb-8 text-gray-200 max-w-xl"
+                className="text-xl md:text-2xl mb-8 text-gray-300 max-w-xl"
               >
-                Professional lawn care and moving services that exceed expectations
+                Professional web development services that transform your ideas into stunning, high-performance websites
               </motion.p>
-
               <motion.div 
                 variants={fadeInUp}
                 className="flex flex-col sm:flex-row gap-4"
@@ -122,14 +112,14 @@ export default function Home() {
             initial="initial"
             animate="animate"
           >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </motion.div>
         </section>
 
         {/* Services Preview Section */}
-        <section className="py-20 bg-white relative z-10">
+        <section className="py-20 bg-black relative z-10">
           <motion.div 
             variants={staggerContainer}
             initial="hidden"
@@ -149,19 +139,19 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
                 {
-                  title: "Lawn Mowing",
-                  description: "Professional lawn maintenance services for a perfect yard all year round",
-                  image: "/images/services/lawn-service-1.jpg"
+                  title: "Web Development",
+                  description: "Custom, responsive websites built with modern technologies and best practices",
+                  icon: "💻"
                 },
                 {
-                  title: "Landscaping",
-                  description: "Transform your outdoor space with our professional landscaping services",
-                  image: "/images/services/lawn-service-2.jpg"
+                  title: "UI/UX Design",
+                  description: "Beautiful, intuitive interfaces that engage and convert your visitors",
+                  icon: "🎨"
                 },
                 {
-                  title: "House Moving",
-                  description: "Expert house moving services with precision and care",
-                  image: "/images/495964413_122126956886771855_902390982935800256_n.jpg"
+                  title: "E-commerce Solutions",
+                  description: "Powerful online stores that drive sales and grow your business",
+                  icon: "🛍️"
                 }
               ].map((service, index) => (
                 <motion.div 
@@ -173,37 +163,17 @@ export default function Home() {
                   }}
                   className="card group"
                 >
-                  <div className="relative h-[300px] overflow-hidden rounded-t-lg">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.2 }}
-                      className="absolute bottom-0 left-0 p-6 text-white"
-                    >
-                      <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                    </motion.div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4">{service.description}</p>
+                  <div className="p-8">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
+                    <p className="text-gray-400 mb-6">{service.description}</p>
                     <motion.div
                       whileHover={{ x: 10 }}
                       transition={{ duration: 0.3 }}
                     >
                       <Link 
                         href="/services" 
-                        className="text-green-600 hover:text-green-800 font-semibold inline-flex items-center group"
+                        className="text-purple-400 hover:text-purple-300 font-semibold inline-flex items-center group"
                       >
                         <span>Learn More</span>
                         <svg 
@@ -224,7 +194,7 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 bg-gray-50 relative z-10">
+        <section className="py-20 bg-gray-900 relative z-10">
           <motion.div 
             variants={staggerContainer}
             initial="hidden"
@@ -241,47 +211,34 @@ export default function Home() {
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-gray-600 max-w-3xl mx-auto text-center"
+                className="text-gray-400 max-w-3xl mx-auto text-center"
               >
-                We pride ourselves on providing exceptional service that stands above the competition
+                We combine technical expertise with creative vision to deliver exceptional results
               </motion.p>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {[
                 {
-                  title: "Experienced Team",
-                  description: "Our professionals have years of experience in lawn care and house moving, ensuring top-quality service every time."
+                  title: "Modern Tech Stack",
+                  description: "Built with the latest technologies for optimal performance and scalability"
                 },
                 {
-                  title: "Quality Guaranteed",
-                  description: "We stand behind our work with a satisfaction guarantee, ensuring your complete happiness with our services."
+                  title: "Responsive Design",
+                  description: "Perfect display and functionality across all devices and screen sizes"
                 },
                 {
-                  title: "Competitive Pricing",
-                  description: "Get the best value for your money with our transparent and competitive pricing structure."
+                  title: "SEO Optimized",
+                  description: "Built with search engines in mind to maximize your online visibility"
                 }
               ].map((feature, index) => (
-                <motion.div 
+                <motion.div
                   key={feature.title}
                   variants={fadeInUp}
-                  whileHover={{ 
-                    y: -10,
-                    transition: { duration: 0.3 }
-                  }}
-                  className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                  className="text-center"
                 >
-                  <motion.div 
-                    className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </motion.div>
-                  <h3 className="text-xl font-bold mb-4 text-center">{feature.title}</h3>
-                  <p className="text-gray-600 text-center">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-white">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
               ))}
             </div>

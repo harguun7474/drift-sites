@@ -10,8 +10,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Specialty Lawns - Professional Lawn Care & Moving Services',
-  description: 'Specialty Lawns provides premium lawn mowing and house moving services. Transform your property with our expert services.',
+  title: 'Drift Sites - Professional Web Development Services',
+  description: 'Drift Sites provides premium web development and design services. Transform your digital presence with our expert solutions.',
 }
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/images/Specialty Lawns (2).png" type="image/png" />
+        <link rel="icon" href="/images/drift-sites-logo.png" type="image/png" />
       </head>
       <body className={`${montserrat.className} antialiased`}>
         <AnimatedLayout>

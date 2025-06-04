@@ -27,8 +27,8 @@ export default function Navbar() {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md text-green-800' 
-          : 'bg-transparent text-green-400'
+          ? 'bg-black/90 backdrop-blur-md shadow-md text-white' 
+          : 'bg-transparent text-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,8 +39,8 @@ export default function Navbar() {
               className="transition-all duration-300 transform hover:scale-105 flex items-center"
             >
               <Image 
-                src="/images/Specialty Lawns logo.png" 
-                alt="Specialty Lawns Logo" 
+                src="/images/drift-sites-logo.png" 
+                alt="Drift Sites Logo" 
                 width={150} 
                 height={60} 
                 className="h-12 w-auto" 
@@ -55,9 +55,11 @@ export default function Navbar() {
               <Link 
                 href="/" 
                 className={`px-4 py-2 rounded-md transition-all duration-300 ${
+                  pathname === '/' ? 'text-purple-400' : 'text-white'
+                } ${
                   scrolled 
-                    ? 'hover:bg-green-100 text-green-800' 
-                    : 'hover:bg-white/20 text-green-400'
+                    ? 'hover:bg-gray-800' 
+                    : 'hover:bg-white/10'
                 }`}
               >
                 Home
@@ -65,9 +67,11 @@ export default function Navbar() {
               <Link 
                 href="/services" 
                 className={`px-4 py-2 rounded-md transition-all duration-300 ${
+                  pathname === '/services' ? 'text-purple-400' : 'text-white'
+                } ${
                   scrolled 
-                    ? 'hover:bg-green-100 text-green-800' 
-                    : 'hover:bg-white/20 text-green-400'
+                    ? 'hover:bg-gray-800' 
+                    : 'hover:bg-white/10'
                 }`}
               >
                 Services
@@ -75,16 +79,18 @@ export default function Navbar() {
               <Link 
                 href="/about" 
                 className={`px-4 py-2 rounded-md transition-all duration-300 ${
+                  pathname === '/about' ? 'text-purple-400' : 'text-white'
+                } ${
                   scrolled 
-                    ? 'hover:bg-green-100 text-green-800' 
-                    : 'hover:bg-white/20 text-green-400'
+                    ? 'hover:bg-gray-800' 
+                    : 'hover:bg-white/10'
                 }`}
               >
                 About
               </Link>
               <Link 
                 href="/quote" 
-                className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-lg ml-2"
+                className="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-lg ml-2"
               >
                 Get a Quote
               </Link>
@@ -97,8 +103,8 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 ${
                 scrolled 
-                  ? 'hover:bg-green-100 text-green-800' 
-                  : 'hover:bg-white/20 text-green-400'
+                  ? 'hover:bg-gray-800 text-white' 
+                  : 'hover:bg-white/10 text-white'
               }`}
             >
               <span className="sr-only">Open main menu</span>
@@ -118,7 +124,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <motion.div 
-        className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-md"
+        className="md:hidden bg-black/90 backdrop-blur-md border-b border-gray-800 shadow-md"
         initial={{ height: 0, opacity: 0 }}
         animate={{ 
           height: isMenuOpen ? 'auto' : 0,
@@ -146,7 +152,7 @@ export default function Navbar() {
           >
             <Link 
               href="/" 
-              className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
+              className={`block hover:bg-gray-800 px-3 py-2 rounded-md ${pathname === '/' ? 'text-purple-400' : 'text-white'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
@@ -159,7 +165,7 @@ export default function Navbar() {
           >
             <Link 
               href="/services" 
-              className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
+              className={`block hover:bg-gray-800 px-3 py-2 rounded-md ${pathname === '/services' ? 'text-purple-400' : 'text-white'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Services
@@ -172,7 +178,7 @@ export default function Navbar() {
           >
             <Link 
               href="/about" 
-              className={`block hover:bg-green-100 px-3 py-2 rounded-md ${scrolled ? 'text-green-800' : 'text-green-400'}`}
+              className={`block hover:bg-gray-800 px-3 py-2 rounded-md ${pathname === '/about' ? 'text-purple-400' : 'text-white'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               About
@@ -185,7 +191,7 @@ export default function Navbar() {
           >
             <Link 
               href="/quote" 
-              className="block bg-green-600 hover:bg-green-500 text-white px-3 py-2 rounded-md"
+              className="block bg-purple-600 hover:bg-purple-500 text-white px-3 py-2 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               Get a Quote

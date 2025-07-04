@@ -14,6 +14,9 @@ html {
 
 body {
   @apply bg-black text-white;
+  /* Prevent content from being pushed off-screen on mobile */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @layer base {
@@ -24,11 +27,11 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-purple-700 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20;
+    @apply bg-purple-700 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-md transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply bg-black text-purple-400 hover:bg-gray-900 font-semibold py-3 px-6 rounded-md border border-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20;
+    @apply bg-black text-purple-400 hover:bg-gray-900 font-semibold py-3 px-6 rounded-md border border-purple-500 transition-all duration-300;
   }
   
   .card {
@@ -43,9 +46,45 @@ body {
     content: '';
     @apply absolute bottom-0 left-0 w-1/3 h-1 bg-purple-500 rounded;
   }
+  
+  /* New diagonal section styles - flattened on mobile */
+  .diagonal-section {
+    @apply relative py-20 overflow-hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .diagonal-section {
+      clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+    }
+  }
+  
+  .diagonal-section-reverse {
+    @apply relative py-20 overflow-hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .diagonal-section-reverse {
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    }
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300;
+  }
+  
+  .neo-brutalism {
+    @apply bg-purple-600 rounded-md;
+  }
+  
+  /* Only add shadow effects on non-mobile */
+  @media (min-width: 768px) {
+    .neo-brutalism {
+      @apply shadow-[5px_5px_0px_0px_rgba(0,0,0,0.8)] hover:translate-x-[5px] hover:translate-y-[5px] hover:shadow-none transition-all duration-200;
+    }
+  }
 }
 
-/* Animation classes */
+/* Animation classes - simplified for mobile */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -57,10 +96,569 @@ body {
   transform: translateY(0);
 }
 
-/* Modern glass effect */
+/* Modern glass effect - reduced blur on mobile */
 .glass {
   background: rgba(17, 17, 17, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(147, 51, 234, 0.18);
+}
+
+@media (min-width: 768px) {
+  .glass {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* 3D Slider Effects - disabled on mobile */
+@media (min-width: 768px) {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.7);
+}
+
+/* Animated gradient background - simplified on mobile */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, var(--primary-dark), var(--primary), var(--primary-light));
+  background-size: 200% 200%;
+}
+
+@media (min-width: 768px) {
+  .animated-gradient {
+    animation: gradient-shift 6s ease infinite;
+  }
+}
+
+/* Particle animation - disabled on mobile */
+@media (min-width: 768px) {
+  @keyframes float-up {
+    0% {
+      transform: translateY(0) scale(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) scale(1);
+      opacity: 0;
+    }
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(147, 51, 234, 0.5);
+    animation: float-up 4s ease-out infinite;
+  }
+}
+
+/* Diagonal sections - flattened on mobile */
+@media (min-width: 768px) {
+  .diagonal-sections section:nth-child(odd) {
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+    @apply relative py-20;
+  }
+
+  .diagonal-sections section:nth-child(even) {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    @apply relative py-20;
+  }
+}
+
+/* Neon glow effect - reduced on mobile */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(147, 51, 234, 0.6);
+}
+
+@media (min-width: 768px) {
+  .neon-text {
+    text-shadow: 
+      0 0 5px rgba(147, 51, 234, 0.8),
+      0 0 10px rgba(147, 51, 234, 0.6),
+      0 0 15px rgba(147, 51, 234, 0.4),
+      0 0 20px rgba(147, 51, 234, 0.2);
+  }
+}
+
+.neon-border {
+  box-shadow: 0 0 5px rgba(147, 51, 234, 0.6);
+}
+
+@media (min-width: 768px) {
+  .neon-border {
+    box-shadow: 
+      0 0 5px rgba(147, 51, 234, 0.8),
+      0 0 10px rgba(147, 51, 234, 0.4);
+  }
+}
+
+/* Asymmetric grid layout - simplified for mobile */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .asymmetric-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, minmax(100px, auto));
+  }
+
+  .asymmetric-grid > div:nth-child(3n+1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .asymmetric-grid > div:nth-child(3n+2) {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+
+  .asymmetric-grid > div:nth-child(3n+3) {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+}
+
+/* Frosted glass cards - reduced blur on mobile */
+.frosted-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .frosted-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Animated borders - disabled on mobile */
+@media (min-width: 768px) {
+  .animated-border {
+    position: relative;
+  }
+
+  .animated-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: inherit;
+    background: linear-gradient(45deg, var(--primary-light), var(--primary-dark), var(--primary-light)) border-box;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-rotate 4s linear infinite;
+  }
+
+  @keyframes border-rotate {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 130% 0%;
+    }
+  }
+} 
+
+/* Add these cool hover animations at the end of the file */
+
+/* Button hover animations */
+.neo-brutalism {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #9333ea, #6b21a8);
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-out;
+}
+
+.neo-brutalism:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.3);
+}
+
+.neo-brutalism:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+.neo-brutalism::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.neo-brutalism:hover::before {
+  left: 100%;
+}
+
+/* Secondary button hover effect */
+.btn-secondary {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #9333ea;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(147, 51, 234, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.6s, height 0.6s, opacity 0.6s;
+}
+
+.btn-secondary:hover::after {
+  width: 300%;
+  height: 300%;
+  opacity: 1;
+}
+
+/* Card hover effects */
+.card, .glass-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover, .glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.25);
+}
+
+/* Animated border for cards */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    45deg, 
+    #9333ea, 
+    #6b21a8, 
+    #4c1d95, 
+    #9333ea
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animated-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Navigation link hover effect */
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #9333ea;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Image hover zoom effect */
+.image-hover-zoom {
+  overflow: hidden;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Text link hover effect */
+a.text-hover-effect {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a.text-hover-effect::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+a.text-hover-effect:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Glow effect on hover */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.7);
+  color: #a855f7;
+}
+
+/* Floating animation for elements */
+.float-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.float-on-hover:hover {
+  transform: translateY(-5px);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(147, 51, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
+  }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse 1.5s infinite;
+}
+
+/* Add these additional hover animations at the end of the file */
+
+/* 3D hover effect for cards */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.5s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+.card-3d:hover::before {
+  opacity: 1;
+}
+
+/* Magnetic button effect - add this class to buttons for a magnetic hover effect */
+.magnetic-button {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Shine effect for images and cards */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  z-index: 1;
+}
+
+.shine-effect:hover::before {
+  animation: shine 1s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+/* Neon text effect on hover */
+.neon-text-hover {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.neon-text-hover:hover {
+  color: #a855f7;
+  text-shadow:
+    0 0 5px rgba(168, 85, 247, 0.5),
+    0 0 10px rgba(168, 85, 247, 0.3),
+    0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+/* Ripple effect for buttons */
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.8s;
+}
+
+.ripple-button:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* Bounce animation for hover */
+.bounce-hover {
+  transition: transform 0.3s ease;
+}
+
+.bounce-hover:hover {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scale animation for icons */
+.scale-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.2);
+}
+
+/* Shake animation for elements */
+.shake-hover:hover {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Rotate animation for icons */
+.rotate-hover {
+  transition: transform 0.3s ease;
+}
+
+.rotate-hover:hover {
+  transform: rotate(15deg);
 } 
